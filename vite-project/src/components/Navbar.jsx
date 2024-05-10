@@ -1,12 +1,16 @@
 import React from 'react'
 import "../App.css";
+import Logo from "../assets/Logo.svg"
+import search from "../assets/search-svgrepo-com.svg"
+import profile from "../assets/profile.svg"
+import write from "../assets/write.svg"
 
 function Navbar() {
   return (
 	 <div className="flex items-center p-1" id="home">
 	 <div className="w-1/3 flex justify-start ml-8">
         <p>
-          <img src="./assets/react.svg" alt="" width="50px" height="50px" />
+          <img src={Logo} alt="" width="50px" height="50px" />
         </p>
 		 </div>
 		  <div className="w-1/3 space-x-10 ">
@@ -16,15 +20,15 @@ function Navbar() {
       </div>
 	  <div class="w-1/3 flex  space-x-6  text-xs justify-end mr-6">
       <div >
-                    <img src="./Icons/search-svgrepo-com.svg" alt="" width="24px" height="24px"/>
+                    <img src={search} alt="Logo" width="24px" height="24px"/>
                     <p>Search</p>
                 </div>
                 <div>
-                    <img src="./Icons/profile.svg" alt=""width="24px" height="24px"/>
+                    <img src={profile} alt=""width="24px" height="24px"/>
                     <p>Profile</p>
                 </div>
                 <div >
-                    <img src="./Icons/write.svg" alt="" width="24px" height="24px" class="ml-6"/>
+                    <img src={write} alt="" width="24px" height="24px" class="ml-6"/>
                     <p>Write a recepie</p>
                 </div>
       </div>
