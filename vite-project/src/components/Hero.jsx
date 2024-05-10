@@ -1,5 +1,5 @@
 import React from "react";
-
+import HeroSection from "../assets/HeroSection.png"
 
 function Hero() {
   return (
@@ -8,9 +8,9 @@ function Hero() {
       style={{
         height: '600px',
         // backgroundImage: `url('/images/hero-background.jpg')`,
-		 backgroundImage: `url('/assets/HeroSection.png')`,
+		backgroundImage: `url(${HeroSection})` ,
         backgroundPosition: 'center',
-        backgroundSize: '100%',
+        backgroundSize: 'cover',  // Changed '100%' to 'cover'
         backgroundRepeat: 'no-repeat'
       }}
     >
