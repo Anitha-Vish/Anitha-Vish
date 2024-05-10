@@ -10,9 +10,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+<<<<<<< HEAD
     "react-router-dom": "^6.23.0"
+=======
+    "tailwindcss": "^3.4.3"
+>>>>>>> c24415559448a99ff1ae7f36f6a9f20b2b3bc994
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
