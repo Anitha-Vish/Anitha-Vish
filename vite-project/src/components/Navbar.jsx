@@ -1,39 +1,57 @@
+import "../App.css";
 import React from 'react'
 import "../App.css";
-import Logo from "../assets/Logo.svg"
-import search from "../assets/search-svgrepo-com.svg"
-import profile from "../assets/profile.svg"
-import write from "../assets/write.svg"
+import Logo from "../assets/Icons/Logo.svg"
+import search from "../assets/Icons/search-svgrepo-com.svg"
+import profile from "../assets/Icons/profile.svg"
+import write from "../assets/Icons/write.svg"
 
-function Navbar() {
-  return (
-	 <div className="flex items-center p-1" id="home">
-	 <div className="w-1/3 flex justify-start ml-8">
-        <p>
-          <img src={Logo} alt="" width="50px" height="50px" />
-        </p>
-		 </div>
-		  <div className="w-1/3 space-x-10 ">
-        <button className=""><a href="./index.html">Home</a></button>
-        <button className=""><a href="">Recepies</a></button>
-        <button className=""><a href="#about-us">About us</a></button>
-      </div>
-	  <div class="w-1/3 flex  space-x-6  text-xs justify-end mr-6">
-      <div >
-                    <img src={search} alt="Logo" width="24px" height="24px"/>
-                    <p>Search</p>
-                </div>
-                <div>
-                    <img src={profile} alt=""width="24px" height="24px"/>
-                    <p>Profile</p>
-                </div>
-                <div >
-                    <img src={write} alt="" width="24px" height="24px" class="ml-6"/>
-                    <p>Write a recepie</p>
-                </div>
-      </div>
-      </div>
-  )
-}
 
-export default Navbar;
+const Navbar = () => {
+    return (
+      <nav className="bg-white shadow-md sticky top-0 overflow-hidden z-[100] w-full">
+        <div className="flex items-center justify-between px-6"> 
+          <div>
+            <a href="/">
+              <img src={Logo} className="w-20" alt="Logo" />
+            </a>
+          </div>
+          <div>
+            <ul className="flex items-center gap-8 font-semibold pt-6">
+              <li>
+                <a href="/" aria-label="Home">Home</a>
+              </li>
+              <li>
+                <a href="/recipes" aria-label="Recipes">Recipes</a>
+              </li>
+              <li>
+                <a href="/about" aria-label="About Us">About Us</a>
+              </li>
+            </ul>
+          </div>
+          <div className="text-xs flex items-center gap-6 py-4">
+            <div>
+              <a href="/profile">
+                <img src={profile} className="w-5 ml-1.5" alt="Profile" />
+                <span>Profile</span>
+              </a>
+            </div>
+            <div>
+              <a href="/search">
+                <img src={search} className="w-5 ml-2" alt="Search" />
+                <span>Search</span>
+              </a>
+            </div>
+            <div>
+              <a href="/write">
+                <img src={write} className="w-5 ml-6" alt="Write a Recipe" />
+                <span>Write a Recipe</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    );
+  };
+  
+  export default Navbar;
