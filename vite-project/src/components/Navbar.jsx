@@ -1,7 +1,7 @@
 import "../App.css";
 import React from 'react'
 import "../App.css";
-import Logo from "../assets/Icons/Logo.svg"
+import MY from "../assets/Icons/MY.svg"
 import search from "../assets/Icons/search-svgrepo-com.svg"
 import profile from "../assets/Icons/profile.svg"
 import write from "../assets/Icons/write.svg"
@@ -9,15 +9,15 @@ import write from "../assets/Icons/write.svg"
 
 const Navbar = () => {
     return (
-      <nav className="bg-white shadow-md sticky top-0 overflow-hidden z-[100] w-full">
-        <div className="flex items-center justify-between px-6"> 
+      <nav className="bg-orange-300 bg-opacity-80 shadow-md sticky top-0 overflow-hidden z-[100] w-full" >
+        <div className="flex items-center justify-between px-10 ml-20 mr-20 py-0"> 
           <div>
             <a href="/">
-              <img src={Logo} className="w-20" alt="Logo" />
+              <img src={MY} className="w-24 py-0" alt="Logo" />
             </a>
           </div>
           <div>
-            <ul className="flex items-center gap-8 font-semibold pt-6">
+            <ul className="flex items-center gap-8 font-semibold">
               <li>
                 <a href="/" aria-label="Home">Home</a>
               </li>
