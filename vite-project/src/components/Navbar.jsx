@@ -1,5 +1,5 @@
 import React from 'react'
-import "../App.css";
+import "./App.css";
 import Logo from "../assets/Logo.svg"
 import search from "../assets/search-svgrepo-com.svg"
 import profile from "../assets/profile.svg"

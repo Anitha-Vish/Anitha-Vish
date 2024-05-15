@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { createClient } from "contentful";
+import "./App.css";
 
-const ContentfulComponent = () => {
-  const [data, setData] = useState(null);
+const Newrecipe = () => {
+  const [data, setData] = useState([]);
 
   useEffect(() => {
     const client = createClient({
@@ -12,8 +13,9 @@ const ContentfulComponent = () => {
 
     const fetchData = async () => {
       try {
-        const response = await client.getEntries({ content_type: "cookBook" });
-        console.log("Fetched data:", response.items);
+        const response = await client.getEntries
+        ({ content_type: 'cookBook' });
+      
         setData(response.items);
       } catch (error) {
         console.error("Error fetching data from Contentful:", error);
@@ -43,4 +45,4 @@ const ContentfulComponent = () => {
   );
 };
 
-export default ContentfulComponent;
+export default Newrecipe;

@@ -2,7 +2,7 @@
 
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import ContentfulComponent from "./components/ContentfulComponent";
+import Newrecipe from "./components/Newrecipe";
 
 import "./App.css";
 
@@ -12,7 +12,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <Hero />
+      <Hero/>
       <Newrecipe />
     </>
   );
