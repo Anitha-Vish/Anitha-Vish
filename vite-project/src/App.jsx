@@ -7,13 +7,15 @@ import Newrecipe from "./components/Newrecipe";
 import "./App.css";
 
 function App() {
-  // const [count, setCount] = useState(0);
 
   return (
     <>
-      <Navbar />
-      <Hero/>
-      <Newrecipe />
+
+      <Navbar/> 
+      <Hero/> 
+      <Recipes />
+      <NewestRecipes/>
+      
     </>
   );
 }

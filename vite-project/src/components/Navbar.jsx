@@ -1,39 +1,84 @@
-import React from 'react'
+import React from 'react';
 import "../App.css";
-import Logo from "../assets/Logo.svg"
-import search from "../assets/search-svgrepo-com.svg"
-import profile from "../assets/profile.svg"
-import write from "../assets/write.svg"
+import MY from "../assets/Icons/MY.svg";
+import search from "../assets/Icons/search-svgrepo-com.svg";
+import profile from "../assets/Icons/profile.svg";
+import write from "../assets/Icons/write.svg";
 
-function Navbar() {
+const Navbar = () => {
+  const isActive = (path) => window.location.pathname === path;
+
   return (
-	 <div className="flex items-center p-1" id="home">
-	 <div className="w-1/3 flex justify-start ml-8">
-        <p>
-          <img src={Logo} alt="" width="50px" height="50px" />
-        </p>
-		 </div>
-		  <div className="w-1/3 space-x-10 ">
-        <button className=""><a href="./index.html">Home</a></button>
-        <button className=""><a href="">Recepies</a></button>
-        <button className=""><a href="#about-us">About us</a></button>
+    <nav className="bg-white bg-opacity-80 shadow-md fixed top-0 z-50 w-full">
+      <div className="flex items-center justify-between px-10 ml-20 mr-20 py-2">
+        <div>
+          <a href="/">
+            <img src={MY} className="w-24 py-0" alt="Logo" />
+          </a>
+        </div>
+        <div>
+          <ul className="flex items-center gap-8 font-semibold">
+            <li>
+              <a 
+                href="/" 
+                className={`hover:text-green-500 ${isActive('/') ? 'text-green-500' : ''}`}
+                aria-label="Home"
+              >
+                Home
+              </a>
+            </li>
+            <li>
+              <a 
+                href="/recipes" 
+                className={`hover:text-green-500 ${isActive('/recipes') ? 'text-green-500' : ''}`}
+                aria-label="Recipes"
+              >
+                Recipes
+              </a>
+            </li>
+            <li>
+              <a 
+                href="/about" 
+                className={`hover:text-green-500 ${isActive('/about') ? 'text-green-500' : ''}`}
+                aria-label="About Us"
+              >
+                About Us
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div className="flex items-center gap-6 py-4 text-xs">
+          <div className="flex items-center gap-1.5">
+            <a 
+              href="/profile" 
+              className={`flex items-center hover:text-green-500 ${isActive('/profile') ? 'text-green-500' : ''}`}
+            >
+              <img src={profile} className="w-5" alt="Profile" />
+              <span className="ml-2 text-sm">Profile</span>
+            </a>
+          </div>
+          <div className="flex items-center gap-1.5">
+            <a 
+              href="/search" 
+              className={`flex items-center hover:text-green-500 ${isActive('/search') ? 'text-green-500' : ''}`}
+            >
+              <img src={search} className="w-5" alt="Search" />
+              <span className="ml-2 text-sm">Search</span>
+            </a>
+          </div>
+          <div className="flex items-center gap-1.5">
+            <a 
+              href="/write" 
+              className={`flex items-center hover:text-green-500 ${isActive('/write') ? 'text-green-500' : ''}`}
+            >
+              <img src={write} className="w-5" alt="Write a Recipe" />
+              <span className="ml-2 text-sm">Write a Recipe</span>
+            </a>
+          </div>
+        </div>
       </div>
-	  <div class="w-1/3 flex  space-x-6  text-xs justify-end mr-6">
-      <div >
-                    <img src={search} alt="Logo" width="24px" height="24px"/>
-                    <p>Search</p>
-                </div>
-                <div>
-                    <img src={profile} alt=""width="24px" height="24px"/>
-                    <p>Profile</p>
-                </div>
-                <div >
-                    <img src={write} alt="" width="24px" height="24px" class="ml-6"/>
-                    <p>Write a recepie</p>
-                </div>
-      </div>
-      </div>
-  )
-}
+    </nav>
+  );
+};
 
 export default Navbar;
