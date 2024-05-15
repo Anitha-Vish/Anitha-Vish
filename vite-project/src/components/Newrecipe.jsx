@@ -29,17 +29,18 @@ const Newrecipe = () => {
   }, []); // Empty dependency array means it runs only once after the initial render
 
   return (
-    <div>
-      <div>
-        <h4 className='text-grey-700 text-4xl mt-8 font-serif'>New Recipes </h4>
-        <hr className='border-orange-500 border-1 mt-2' />
-      </div>
+     <div className='mx-40 my-20'>
+        <h2 className='text-grey-700 text-4xl mt-8 font-serif'>
+        Our Newest Recipes
+      </h2>
+
+     
 
       <div className='mt-8 grid lg:grid-cols-4 gap-6 '>
         {data.map((item) => (
           <div
             key={item.sys.id}
-            className='bg-white rounded overflow-hidden shadow-md relative'>
+            className='bg-orange-100 my-10 shadow-md rounded overflow-hidden'>
             <div>
               <img
                 src={item.fields.featuredImage.fields.file.url}
@@ -53,7 +54,7 @@ const Newrecipe = () => {
                   </span>
                   <br />
                 </a>
-                <span className='text-xs'>{item.fields.description}</span>
+                <span className='text-xs'>Cooking Time: {item.fields.cookingTime} Minutes</span> 
                 <br />
               </div>
             </div>
