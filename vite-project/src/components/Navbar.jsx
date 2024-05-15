@@ -54,7 +54,7 @@ const Navbar = () => {
               className={`flex items-center hover:text-green-500 ${isActive('/profile') ? 'text-green-500' : ''}`}
             >
               <img src={profile} className="w-5" alt="Profile" />
-              <span className="ml-1.5">Profile</span>
+              <span className="ml-2 text-sm">Profile</span>
             </a>
           </div>
           <div className="flex items-center gap-1.5">
@@ -63,7 +63,7 @@ const Navbar = () => {
               className={`flex items-center hover:text-green-500 ${isActive('/search') ? 'text-green-500' : ''}`}
             >
               <img src={search} className="w-5" alt="Search" />
-              <span className="ml-2">Search</span>
+              <span className="ml-2 text-sm">Search</span>
             </a>
           </div>
           <div className="flex items-center gap-1.5">
@@ -72,7 +72,7 @@ const Navbar = () => {
               className={`flex items-center hover:text-green-500 ${isActive('/write') ? 'text-green-500' : ''}`}
             >
               <img src={write} className="w-5" alt="Write a Recipe" />
-              <span className="ml-6">Write a Recipe</span>
+              <span className="ml-2 text-sm">Write a Recipe</span>
             </a>
           </div>
         </div>
