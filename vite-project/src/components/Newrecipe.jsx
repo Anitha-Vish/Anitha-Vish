@@ -1,48 +1,46 @@
+import React, { useState, useEffect } from "react";
 import { createClient } from "contentful";
 
-async function getStaticProps() {
-  try {
+const ContentfulComponent = () => {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
     const client = createClient({
-      space: process.env.CONTENTFUL_SPACE_ID,
-      accessToken: process.env.CONTENTFUL_ACCESS_KEY,
+      space: process.env.REACT_APP_CONTENTFUL_SPACE_ID,
+      accessToken: process.env.REACT_APP_CONTENTFUL_ACCESS_TOKEN,
     });
 
-    const res = await client.getEntries({ content_type: "cookBook" });
-    console.log("Fetched data:", res.items);
+    const fetchData = async () => {
+      try {
+        const response = await client.getEntries({ content_type: "cookBook" });
+        console.log("Fetched data:", response.items);
+        setData(response.items);
+      } catch (error) {
+        console.error("Error fetching data from Contentful:", error);
+      }
+    };
 
-    //    return {
-    //     props: {
-    //       cookBooks:res.items,
-    //     },
-    //    };
+    fetchData();
 
-    // } catch (error) {
+    return () => {
+      // Cleanup
+    };
+  }, []); // Empty dependency array means it runs only once after the initial render
 
-    // 	console.error("Error fetching data from Contentful:", error);
+  return (
+    <div>
+      <h1>Contentful Data</h1>
+      {data ? (
+        <ul>
+          {data.map((item) => (
+            <li key={item.sys.id}>{item.fields.title}</li>
+          ))}
+        </ul>
+      ) : (
+        <p>Loading...</p>
+      )}
+    </div>
+  );
+};
 
-    //  return {
-    //      props: {
-    //         cookBooks: [],
-    //       },
-
-    //   };
-    //   }
-    //   }
-  } catch (error) {
-    console.error("Error fetching data from Contentful:", error);
-  }
-}
-
-getStaticProps();
-
-// function Newrecipe({ cookBooks }) {
-//   console.log(cookBooks);
-
-//   return <div>Recipe</div>;
-// }
-
-function Newrecipe() {
-
-return <div>Recipe</div>;
-}
-export default Newrecipe;
+export default ContentfulComponent;
