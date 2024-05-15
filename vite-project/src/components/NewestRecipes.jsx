@@ -7,11 +7,8 @@ import tia1 from "../assets/tia1.jpeg"
 import tia2 from "../assets/tia2.jpeg"
 import tio2 from "../assets/tio2.jpeg"
 import rabbit2 from "../assets/rabbit2.jpeg"
-import search from "../assets/Icons/search-svgrepo-com.svg"
-import profile from "../assets/Icons/profile.svg"
-import write from "../assets/Icons/write.svg"
 
-const WeLoveEat = () => {
+const NewestRecipes = () => {
   return (
     <div className="mx-40 my-20">
             <h2 className="text-grey-700 text-4xl mt-8 font-serif">Our Newest Recipes</h2>
@@ -54,4 +51,4 @@ const WeLoveEat = () => {
   )
 }
 
-export default WeLoveEat;
+export default NewestRecipes;

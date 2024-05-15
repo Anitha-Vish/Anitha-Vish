@@ -9,10 +9,10 @@ import write from "../assets/Icons/write.svg"
 
 const Navbar = () => {
     return (
-      <nav className="bg-orange-300 bg-opacity-80 shadow-md sticky top-0 overflow-hidden z-[100] w-full" >
-        <div className="flex items-center justify-between px-10 ml-20 mr-20"> 
+      <nav className="bg-orange-400 bg-opacity-80 shadow-md sticky top-0 overflow-hidden z-[100] w-full" >
+        <div className="flex items-center justify-between px-10 ml-20 mr-20 py-0"> 
           <div>
-            <a href="/"> 
+            <a href="/">
               <img src={MY} className="w-24 py-0" alt="Logo" />
             </a>
           </div>

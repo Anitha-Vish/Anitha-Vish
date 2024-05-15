@@ -35,7 +35,7 @@ const Recipes = () => {
                 </div>
                 <div className="mt-8 grid lg:grid-cols-4 gap-6 ">
                     {recipes.map(recipe => (
-                      <div key={recipe.sys.id} className="bg-white rounded overflow-hidden shadow-md relative">
+                      <div key={recipe.sys.id} className="bg-orange-100 rounded overflow-hidden shadow-md relative">
                         <div>
                             <img src={recipe.fields.image.fields.file.url} alt={recipe.fields.title} className="w-full h-32 sm:h-64 object-cover "/>
                             <div className="my-4 px-2">
