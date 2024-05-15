@@ -1,8 +1,7 @@
 
 import Navbar from "./components/Navbar"
 import Hero from "./components/Hero"
-import Recipes from "./components/Recipes";
-import NewestRecipes from "./components/NewestRecipes";
+import Recipes from "./components/Recipes"
 import "./App.css";
 
 function App() {
@@ -13,7 +12,6 @@ function App() {
       <Navbar/> 
       <Hero/> 
       <Recipes />
-      <NewestRecipes/>
       
     </>
   );
