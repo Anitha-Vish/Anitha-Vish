@@ -1,5 +1,6 @@
 import React from "react";
 import HeroSection from "../assets/HeroSection.png"
+import "../App.css";
 
 function Hero() {
   return (

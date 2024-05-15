@@ -1,8 +1,10 @@
+// import { useState } from "react";
 
-import Navbar from "./components/Navbar"
-import Hero from "./components/Hero"
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
 import Recipes from "./components/Recipes";
-import NewestRecipes from "./components/NewestRecipes";
+import Newrecipe from "./components/Newrecipe";
+
 import "./App.css";
 
 function App() {
@@ -12,8 +14,8 @@ function App() {
 
       <Navbar/> 
       <Hero/> 
-      <Recipes />
-      <NewestRecipes/>
+       <Recipes/> 
+      <Newrecipe/>
       
     </>
   );
