@@ -6,7 +6,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Recipes from "./components/Recipes";
 import Newrecipe from "./components/Newrecipe";
-import page from "./components/Page";
+
 
 import "./App.css";
 import Contentful from "./components/Contentful";
@@ -55,8 +55,6 @@ function App() {
         <Route path='/Newrecipe' element={<Newrecipe />} data={data} />
       </Routes> */}
 
-      <Recipes />
-      <Newrecipe />
       <AboutUs />
       <Newsletter />
       <Footer />
