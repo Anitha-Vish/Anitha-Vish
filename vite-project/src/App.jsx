@@ -1,7 +1,6 @@
-
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { NavLink,Link, useNavigate } from "react-router-dom";
+import { NavLink, Link, useNavigate } from "react-router-dom";
 import { createClient } from "contentful";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
@@ -10,11 +9,15 @@ import Newrecipe from "./components/Newrecipe";
 import page from "./components/Page";
 
 import "./App.css";
+import Contentful from "./components/Contentful";
+import Newsletter from "./components/Newsletter";
+import AboutUs from "./components/AboutUs";
+import Footer from "./components/Footer";
 
 function App() {
- const [data, setData] = useState([]);
+  const [data, setData] = useState([]);
 
- useEffect(() => {
+  useEffect(() => {
     const client = createClient({
       space: "6egxy69oc347",
       accessToken: "l6omJiUec3CKk0HGU5kewwKMN9l45Mxqi_H9I6469Fo",
@@ -38,16 +41,13 @@ function App() {
     };
   }, []); // Empty dependency array means it runs only once after the initial render
 
-
-
   return (
     <>
-
-      <Navbar/> 
-      <Hero/> 
-      <Recipes/> 
+      <Navbar />
+      <Hero />
+      <Recipes />
       <Newrecipe data={data} />
-     
+
       {/* <Routes>
         <Route path='/Navbar' element={<Navbar />} />
         <Route path='/Hero' element={<Hero />} />
@@ -55,7 +55,11 @@ function App() {
         <Route path='/Newrecipe' element={<Newrecipe />} data={data} />
       </Routes> */}
 
-      
+      <Recipes />
+      <Newrecipe />
+      <AboutUs />
+      <Newsletter />
+      <Footer />
     </>
   );
 }
