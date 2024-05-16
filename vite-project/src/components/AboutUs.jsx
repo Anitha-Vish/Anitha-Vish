@@ -3,18 +3,20 @@ import Aboutus from "../assets/Aboutus.png";
 function AboutUs() {
   return (
     <div
-      className="flex justify-start items-center "
+      className="flex justify-start items-center bg-blend-difference  "
       style={{
         height: "600px",
         backgroundImage: `url(${Aboutus})`,
         backgroundPosition: "center",
         backgroundSize: "cover", // Changed '100%' to 'cover'
         backgroundRepeat: "no-repeat",
+      
+        
       }}
     >
-      <div class=" flex flex-col justify-center ">
+      <div class=" flex flex-col justify-center   ">
         <h2 class="text-4xl mx-40 font-bold m-6 ">OUR STORY</h2>
-        <p class=" mx-40 text-m m-6 max-w-md">
+        <p class=" mx-40 text-m m-6 max-w-md  ">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui nihil
           vel accusamus optio voluptatum excepturi doloribus maxime pariatur
           unde commodi? Lorem ipsum dolor sit amet consectetur, adipisicing

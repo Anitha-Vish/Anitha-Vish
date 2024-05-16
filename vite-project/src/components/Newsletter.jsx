@@ -14,7 +14,7 @@ function Newsletter() {
     >
       <div class=" flex flex-col justify-center ">
         <h2 class="text-4xl mx-40 font-bold m-6 ">OUR STORY</h2>
-        <p class=" mx-40 text-m m-6 max-w-md">
+        <p class=" mx-40 text-m m-6 max-w-lg ">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui nihil
           vel accusamus optio voluptatum excepturi doloribus maxime pariatur
           unde commodi? Lorem ipsum dolor sit amet consectetur, adipisicing
