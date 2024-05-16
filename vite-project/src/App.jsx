@@ -6,6 +6,11 @@ import Recipes from "./components/Recipes";
 import Newrecipe from "./components/Newrecipe";
 
 import "./App.css";
+import Contentful from "./components/Contentful";
+import Newsletter from "./components/Newsletter";
+import AboutUs from "./components/AboutUs";
+import Footer from "./components/Footer";
+
 
 function App() {
 
@@ -14,8 +19,12 @@ function App() {
 
       <Navbar/> 
       <Hero/> 
-       <Recipes/> 
+      <Recipes/> 
       <Newrecipe/>
+      <AboutUs/>
+      <Newsletter />
+      <Footer/>
+     
       
     </>
   );
