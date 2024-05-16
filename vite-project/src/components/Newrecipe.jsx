@@ -2,31 +2,32 @@ import React, { useState, useEffect } from "react";
 import { createClient } from "contentful";
 import "../App.css";
 
-const Newrecipe = () => {
-  const [data, setData] = useState([]);
 
-  useEffect(() => {
-    const client = createClient({
-      space: "6egxy69oc347",
-      accessToken: "M_1VuSl7HCwwCXh21aGsoBGa7e1oZi8f7LhDp-7rI0A",
-    });
+const Newrecipe = ({data}) => {
+  // const [data, setData] = useState([]);
 
-    const fetchData = async () => {
-      try {
-        const response = await client.getEntries({ content_type: "cookBook" });
-        console.log(response.items);
-        setData(response.items);
-      } catch (error) {
-        console.error("Error fetching data from Contentful:", error);
-      }
-    };
+  // useEffect(() => {
+  //   const client = createClient({
+  //     space: "6egxy69oc347",
+  //     accessToken: "M_1VuSl7HCwwCXh21aGsoBGa7e1oZi8f7LhDp-7rI0A",
+  //   });
 
-    fetchData();
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await client.getEntries({ content_type: "cookBook" });
+  //       console.log(response.items);
+  //       setData(response.items);
+  //     } catch (error) {
+  //       console.error("Error fetching data from Contentful:", error);
+  //     }
+  //   };
 
-    return () => {
-      // Cleanup
-    };
-  }, []); // Empty dependency array means it runs only once after the initial render
+  //   fetchData();
+
+  //   return () => {
+  //     // Cleanup
+  //   };
+  // }, []); // Empty dependency array means it runs only once after the initial render
 
   return (
      <div className='mx-40 my-20'>
@@ -48,13 +49,15 @@ const Newrecipe = () => {
                 className='w-full h-32 sm:h-64 object-cover '
               />
               <div className='my-4 px-2'>
-                <a href='/'>
+                <a href=''>
                   <span className='font-bold no-underline hover:underline font-serif'>
-                    {item.fields.name}
+                    {item.fields.name} 
                   </span>
                   <br />
                 </a>
                 <span className='text-xs'>Cooking Time: {item.fields.cookingTime} Minutes</span> 
+                
+                  
                 <br />
               </div>
             </div>
