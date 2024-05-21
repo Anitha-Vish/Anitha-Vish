@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Outlet } from "react-router-dom";
 import { NavLink, Link, useNavigate } from "react-router-dom";
 import { createClient } from "contentful";
 import Navbar from "./components/Navbar";
@@ -7,12 +7,14 @@ import Hero from "./components/Hero";
 import Recipes from "./components/Recipes";
 import Newrecipe from "./components/Newrecipe";
 
-
 import "./App.css";
 import Contentful from "./components/Contentful";
 import Newsletter from "./components/Newsletter";
 import AboutUs from "./components/AboutUs";
 import Footer from "./components/Footer";
+import Recipepage from "./components/Recipepage";
+import OneRecipe from "./components/OneRecipe";
+import Layout from "./components/Layout";
 
 function App() {
   const [data, setData] = useState([]);
@@ -43,21 +45,41 @@ function App() {
 
   return (
     <>
-      <Navbar />
+      {/* <Navbar />
       <Hero />
       <Recipes />
-      <Newrecipe data={data} />
-
-      {/* <Routes>
-        <Route path='/Navbar' element={<Navbar />} />
-        <Route path='/Hero' element={<Hero />} />
-        <Route path='/Recipes' element={<Recipes/>} />
-        <Route path='/Newrecipe' element={<Newrecipe />} data={data} />
-      </Routes> */}
-
+      <Newrecipe data={data}/>
       <AboutUs />
       <Newsletter />
       <Footer />
+      <Recipepage data={data} />
+      <OneRecipe data={data} />
+      <Layout data={data} /> */}
+         
+       <Routes>
+      <Route path="/" element={<Layout data={data} />}>
+      
+         <Route path="/"/>
+          
+       
+        // <Route path="/Navbar" element={<Navbar />} />
+        // <Route path="/Hero" element={<Hero />} />
+        // <Route path="/Recipes"  element={<Recipes />} />
+        // <Route path="/Newrecipe" element={<Newrecipe data={data} /> }  />
+        // <Route path="/AboutUs" element={<AboutUs />} />
+        // <Route path="/Newsletter" element={<Newsletter />} />
+        // <Route path="/Footer" element={<Footer />} />
+
+  
+        <Route path="/Navbar/Hero/Recipes/Newrecipe/AboutUs/Newsletter/Footer" component={Layout} />
+      
+
+       {/* <Route path='/Recipepage' element={<Recipepage data={data} />} /> */}
+       <Route path="/Newrecipe" element={<Newrecipe data={data} setdata={setData} /> }  />
+       <Route path='/recipe/:id' element={<OneRecipe data={data} /> } /> 
+      </Route>
+    </Routes>
+
     </>
   );
 }
