@@ -3,31 +3,7 @@ import { createClient } from "contentful";
 import "../App.css";
 
 const Page = ({ data }) => {
-  // const [data, setData] = useState([]);
-
-  // useEffect(() => {
-  //   const client = createClient({
-  //     space: "6egxy69oc347",
-  //     accessToken: "M_1VuSl7HCwwCXh21aGsoBGa7e1oZi8f7LhDp-7rI0A",
-  //   });
-
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await client.getEntries({ content_type: "cookBook" });
-  //       console.log(response.items);
-  //       setData(response.items);
-  //     } catch (error) {
-  //       console.error("Error fetching data from Contentful:", error);
-  //     }
-  //   };
-
-  //   fetchData();
-
-  //   return () => {
-  //     // Cleanup
-  //   };
-  // }, []); // Empty dependency array means it runs only once after the initial render
-
+ 
   return (
     <div className='mx-40 my-20'>
       <h2 className='text-grey-700 text-4xl mt-8 font-serif'>

@@ -5,30 +5,7 @@ import { Link } from "react-router-dom";
 import "../App.css";
 
 const Newrecipe = ({ data, setdata }) => {
-  // const [data, setData] = useState([]);
-
-  // useEffect(() => {
-  //   const client = createClient({
-  //     space: "6egxy69oc347",
-  //     accessToken: "M_1VuSl7HCwwCXh21aGsoBGa7e1oZi8f7LhDp-7rI0A",
-  //   });
-
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await client.getEntries({ content_type: "cookBook" });
-  //       console.log(response.items);
-  //       setData(response.items);
-  //     } catch (error) {
-  //       console.error("Error fetching data from Contentful:", error);
-  //     }
-  //   };
-
-  //   fetchData();
-
-  //   return () => {
-  //     // Cleanup
-  //   };
-  // }, []); // Empty dependency array means it runs only once after the initial render
+ 
 
   return (
     <div className='mx-40 my-20'>
@@ -50,7 +27,8 @@ const Newrecipe = ({ data, setdata }) => {
                 <a href=''>
                   <span className='font-bold no-underline hover:underline font-serif'>
                     {/* {item.fields.name} */}
-                    <Link key={index} to={`/recipe/${item.fields.id}`}>
+                    {/* <Link key={index} to={`/recipe/${item.fields.id}`}> */}
+                     <Link key={index} to={`/recipe/${item.sys.id}`}>
                       {/* <h4 className='text-grey-700 text-2xl mt-8 font-serif'>
                         Recipes
                       </h4> */}

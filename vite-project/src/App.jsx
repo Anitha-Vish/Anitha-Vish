@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, Outlet } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Outlet,
+} from "react-router-dom";
 import { NavLink, Link, useNavigate } from "react-router-dom";
 import { createClient } from "contentful";
 import Navbar from "./components/Navbar";
@@ -15,6 +20,13 @@ import Footer from "./components/Footer";
 import Recipepage from "./components/Recipepage";
 import OneRecipe from "./components/OneRecipe";
 import Layout from "./components/Layout";
+import Home from "./pages/Home";
+
+//  const client = createClient({
+//      space: import.meta.env.CONTENTFUL_SPACE_ID,
+//        accessToken: import.meta.env.CONTENTFUL_ACCESS_KEY,
+//      });
+//      console.log(import.meta.env.CONTENTFUL_ACCESS_KEY);
 
 function App() {
   const [data, setData] = useState([]);
@@ -55,31 +67,27 @@ function App() {
       <Recipepage data={data} />
       <OneRecipe data={data} />
       <Layout data={data} /> */}
-         
-       <Routes>
-      <Route path="/" element={<Layout data={data} />}>
-      
-         <Route path="/"/>
-          
+
+      <Routes>
+        <Route path='/' element={<Layout data={data} />}>
+          <Route index element={<Home data={data} />} />
+   
+
+
        
-        // <Route path="/Navbar" element={<Navbar />} />
-        // <Route path="/Hero" element={<Hero />} />
-        // <Route path="/Recipes"  element={<Recipes />} />
-        // <Route path="/Newrecipe" element={<Newrecipe data={data} /> }  />
-        // <Route path="/AboutUs" element={<AboutUs />} />
-        // <Route path="/Newsletter" element={<Newsletter />} />
-        // <Route path="/Footer" element={<Footer />} />
-
-  
-        <Route path="/Navbar/Hero/Recipes/Newrecipe/AboutUs/Newsletter/Footer" component={Layout} />
-      
-
-       {/* <Route path='/Recipepage' element={<Recipepage data={data} />} /> */}
-       <Route path="/Newrecipe" element={<Newrecipe data={data} setdata={setData} /> }  />
-       <Route path='/recipe/:id' element={<OneRecipe data={data} /> } /> 
-      </Route>
-    </Routes>
-
+          <Route
+            path='/recipes'
+            element={<Newrecipe data={data} setdata={setData} />}
+            
+          />
+       
+           <Route
+            path='/about'
+            element={<AboutUs />}
+          />
+          <Route path='/recipe/:id' element={<OneRecipe data={data} />} />
+        </Route>
+      </Routes>
     </>
   );
 }
