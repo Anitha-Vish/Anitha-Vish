@@ -9,7 +9,7 @@ function Hero() {
       style={{
         height: '600px',
         // backgroundImage: `url('/images/hero-background.jpg')`,
-		backgroundImage: `url(${HeroSection})` ,
+		    backgroundImage: `url(${HeroSection})` ,
         backgroundPosition: 'center',
         backgroundSize: 'cover',  // Changed '100%' to 'cover'
         backgroundRepeat: 'no-repeat'
