@@ -9,14 +9,12 @@ import { Outlet, NavLink, Link } from "react-router-dom";
 function Layout({ data }) {
   return (
     <div>
-     
       <Navbar />
-      <main >
+      <main>
         <Outlet />
       </main>
       <footer>
-         <Footer />
-       
+        <Footer />
       </footer>
     </div>
   );
