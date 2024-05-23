@@ -5,8 +5,6 @@ import { Link } from "react-router-dom";
 import "../App.css";
 
 const Newrecipe = ({ data, setdata }) => {
- 
-
   return (
     <div className='mx-40 my-20'>
       <h2 className='text-grey-700 text-4xl mt-8 font-serif'>
@@ -28,7 +26,7 @@ const Newrecipe = ({ data, setdata }) => {
                   <span className='font-bold no-underline hover:underline font-serif'>
                     {/* {item.fields.name} */}
                     {/* <Link key={index} to={`/recipe/${item.fields.id}`}> */}
-                     <Link key={index} to={`/recipe/${item.sys.id}`}>
+                    <Link key={index} to={`/recipe/${item.sys.id}`}>
                       {/* <h4 className='text-grey-700 text-2xl mt-8 font-serif'>
                         Recipes
                       </h4> */}

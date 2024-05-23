@@ -22,21 +22,15 @@ import OneRecipe from "./components/OneRecipe";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
 
-//  const client = createClient({
-//      space: import.meta.env.CONTENTFUL_SPACE_ID,
-//        accessToken: import.meta.env.CONTENTFUL_ACCESS_KEY,
-//      });
-//      console.log(import.meta.env.CONTENTFUL_ACCESS_KEY);
-
 function App() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
     const client = createClient({
-      space: "6egxy69oc347",
-      accessToken: "l6omJiUec3CKk0HGU5kewwKMN9l45Mxqi_H9I6469Fo",
+      space: import.meta.env.VITE_CONTENTFUL_SPACE_ID,
+      accessToken: import.meta.env.VITE_CONTENTFUL_ACCESS_TOKEN,
     });
-    console.log(import.meta.env.CONTENTFUL_SPACE_ID);
+    console.log(import.meta.env.VITE_CONTENTFUL_ACCESS_TOKEN);
 
     const fetchData = async () => {
       try {
@@ -57,34 +51,16 @@ function App() {
 
   return (
     <>
-      {/* <Navbar />
-      <Hero />
-      <Recipes />
-      <Newrecipe data={data}/>
-      <AboutUs />
-      <Newsletter />
-      <Footer />
-      <Recipepage data={data} />
-      <OneRecipe data={data} />
-      <Layout data={data} /> */}
-
       <Routes>
         <Route path='/' element={<Layout data={data} />}>
           <Route index element={<Home data={data} />} />
-   
 
-
-       
           <Route
             path='/recipes'
             element={<Newrecipe data={data} setdata={setData} />}
-            
           />
-       
-           <Route
-            path='/about'
-            element={<AboutUs />}
-          />
+
+          <Route path='/about' element={<AboutUs />} />
           <Route path='/recipe/:id' element={<OneRecipe data={data} />} />
         </Route>
       </Routes>
